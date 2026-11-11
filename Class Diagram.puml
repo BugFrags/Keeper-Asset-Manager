@@ -1,0 +1,57 @@
+@startuml
+'https://plantuml.com/class-diagram
+!theme plain
+
+class User {
+    Int P.Key id
+    String name
+    String email
+    String password
+    String role
+}
+
+class APIKey {
+    Int P.Key id
+    Int F.Key user_id
+    String name
+    String key_hash
+    String prefix
+    DateTime created_at
+    DateTime? expires_at
+    DateTime? last_used_at
+    Boolean IsRevoked
+}
+
+class DigitalAsset {
+    Int P.Key id
+    Int F.Key owner_id
+    Int F.Key region_id
+    String name
+    String category
+    String type
+    Boolean status
+}
+
+class Region{
+    Int P.Key id
+    String Name
+    String Code
+}
+
+class AuditTrail{
+    Int P.Key id
+    Int? user_id
+    String action
+    String target_entity
+    Int target_entity_id
+    DateTime time_stamp = DateTime.UtcNow
+    String? details
+}
+
+User "1" *-- "Many" APIKey
+User "1" *-- "Many" DigitalAsset
+User "1" *-- "Many" AuditTrail
+
+DigitalAsset "*" --* "1" Region
+
+@enduml
