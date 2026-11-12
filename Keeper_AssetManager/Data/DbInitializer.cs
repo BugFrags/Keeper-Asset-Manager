@@ -1,5 +1,6 @@
 ﻿namespace Keeper_AssetManager.Data;
 using Keeper_AssetManager.Models;
+using Keeper_AssetManager.Services;
 
 public static class DbInitializer
 {

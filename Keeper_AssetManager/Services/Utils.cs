@@ -1,4 +1,4 @@
-﻿namespace Keeper_AssetManager.Data;
+﻿namespace Keeper_AssetManager.Services;
 using System;
 using System.Security.Cryptography;
 using System.Text;
