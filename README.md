@@ -1,2 +1,2 @@
-﻿# Keeper - A digital asset manager
+# Keeper - A digital asset manager
 
